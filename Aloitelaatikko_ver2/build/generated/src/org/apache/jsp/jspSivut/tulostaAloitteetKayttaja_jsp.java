@@ -64,7 +64,7 @@ public final class tulostaAloitteetKayttaja_jsp extends org.apache.jasper.runtim
       out.write("                padding: 70px;\r\n");
       out.write("            }\r\n");
       out.write("            .table {\r\n");
-      out.write("                background-color: white !important;\r\n");
+      out.write("                background: rgba(255,255,255,0.7) ;\r\n");
       out.write("            }\r\n");
       out.write("            .muokkaa-btn{\r\n");
       out.write("                margin-left: 6px;\r\n");
@@ -84,9 +84,18 @@ public final class tulostaAloitteetKayttaja_jsp extends org.apache.jasper.runtim
       out.write("            .th-pvm{\r\n");
       out.write("                width: 120px;\r\n");
       out.write("            }\r\n");
+      out.write("            .td-kuvaus{\r\n");
+      out.write("                text-align: left;\r\n");
+      out.write("            }\r\n");
+      out.write("            .tr{\r\n");
+      out.write("                font-weight: 500;\r\n");
+      out.write("            }\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("\r\n");
       out.write("        </style>\r\n");
       out.write("        <title>Hae Aloitteet</title>\r\n");
+      out.write("        <link rel=\"shortcut icon\" href=\"pictures/favicon.ico\" type=\"image/x-icon\">\r\n");
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");
       out.write("        ");
@@ -101,7 +110,7 @@ public final class tulostaAloitteetKayttaja_jsp extends org.apache.jasper.runtim
       out.write("                    <thead class=\"thead-dark\">\r\n");
       out.write("                        <tr>\r\n");
       out.write("                            <th class=\"th th-id\">ID</th>\r\n");
-      out.write("                            <th class=\"th th-nimi\">Nimi</th>\r\n");
+      out.write("                            <th class=\"th th-nimi\">Aloite</th>\r\n");
       out.write("                            <th class=\"th th-kuvaus\">Kuvaus</th>\r\n");
       out.write("                            <th class=\"th th-pvm\">pvm</th>\r\n");
       out.write("                            <th class=\"th th-tekijatunnus\">Tekijätunnus</th>\r\n");
@@ -114,7 +123,7 @@ public final class tulostaAloitteetKayttaja_jsp extends org.apache.jasper.runtim
                             for (Aloite aloite : tietovarasto.haeKaikkiAloitteet()) {
                         
       out.write("\r\n");
-      out.write("                        <tr>\r\n");
+      out.write("                        <tr class=\"tr\">\r\n");
       out.write("\r\n");
       out.write("                            <td>");
       out.print( aloite.getAloiteID());
@@ -122,7 +131,7 @@ public final class tulostaAloitteetKayttaja_jsp extends org.apache.jasper.runtim
       out.write("                            <td>");
       out.print( aloite.getAloitenimi());
       out.write("</td>\r\n");
-      out.write("                            <td>");
+      out.write("                            <td class=\"td-kuvaus\">");
       out.print( aloite.getAloitekuvaus());
       out.write("</td>\r\n");
       out.write("                            <td>");
@@ -132,7 +141,13 @@ public final class tulostaAloitteetKayttaja_jsp extends org.apache.jasper.runtim
       out.print( aloite.getKayttajaID());
       out.write("</td>\r\n");
       out.write("                            <td>\r\n");
-      out.write("                                <form name=\"lisays\" action='../../Aloitelaatikko_ver2/jspSivut/muokkaaAloite.jsp'>\r\n");
+      out.write("                                <form name=\"lisays\" action='../../Aloitelaatikko_ver2/jspSivut/muokkaaAloite.jsp?aloiteID=");
+      out.print(aloite.getAloiteID());
+      out.write("&aloitenimi=");
+      out.print(aloite.getAloitenimi());
+      out.write("&aloitekuvaus=");
+      out.print(aloite.getAloitekuvaus());
+      out.write("' method=\"post\">\r\n");
       out.write("                                    <input class=\"btn btn-danger muokkaa-btn\" type=\"submit\" value=\">\" name=\"muokkaa\">\r\n");
       out.write("                                </form>\r\n");
       out.write("                            </td>\r\n");

@@ -63,11 +63,15 @@ public final class tulostaAloitteet_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("                text-align: center;\n");
       out.write("                padding: 70px;\n");
       out.write("            }\n");
-      out.write("            .table {\n");
-      out.write("                background: rgba(255,255,255,0.7) ;\n");
+      out.write("            .table{\n");
+      out.write("                background: rgba(255,255,255,0.7);\n");
+      out.write("\n");
+      out.write("            }\n");
+      out.write("            th, td{\n");
+      out.write("                border-top: 1px solid black !important;\n");
       out.write("            }\n");
       out.write("            .delete-btn{\n");
-      out.write("                margin-left: 6px;\n");
+      out.write("                margin-left: 0px;\n");
       out.write("            }\n");
       out.write("            .th-poista{\n");
       out.write("                width: 50px;\n");
@@ -76,7 +80,7 @@ public final class tulostaAloitteet_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("                width: 100px;\n");
       out.write("            }\n");
       out.write("            .th-id{\n");
-      out.write("                width: 10px;\n");
+      out.write("                width: 100px;\n");
       out.write("            }\n");
       out.write("            .th-tekijatunnus{\n");
       out.write("                width: 50px;\n");
@@ -93,6 +97,20 @@ public final class tulostaAloitteet_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("            .td-nimi{\n");
       out.write("                font-weight: bold;\n");
       out.write("            }\n");
+      out.write("            .th-vaihe{\n");
+      out.write("                width: 100px;\n");
+      out.write("            }\n");
+      out.write("            .table-responsive{\n");
+      out.write("                max-height: 600px;\n");
+      out.write("                margin-top: 50px;\n");
+      out.write("            }\n");
+      out.write("            thead {\n");
+      out.write("                top: 151px;\n");
+      out.write("                left: 400px;\n");
+      out.write("\n");
+      out.write("                position: absolute;\n");
+      out.write("            }\n");
+      out.write("\n");
       out.write("\n");
       out.write("        </style>\n");
       out.write("        <title>Hae Aloitteet</title>\n");
@@ -105,7 +123,7 @@ public final class tulostaAloitteet_jsp extends org.apache.jasper.runtime.HttpJs
         
       out.write("\n");
       out.write("        <div class=\"container\">\n");
-      out.write("            <h1>Kaikki aloitteet</h1>\n");
+      out.write("            <h1>Kaikki aloitteet</h1><br>\n");
       out.write("            <div class=\"table-responsive\">\n");
       out.write("                <table class=\"table table-striped\" border=\"1\">\n");
       out.write("                    <thead class=\"thead-dark\">\n");
@@ -130,7 +148,7 @@ public final class tulostaAloitteet_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("\n");
       out.write("                        <tr class=\"tr\">\n");
       out.write("\n");
-      out.write("                            <td>");
+      out.write("                            <td class=\"td-id\">");
       out.print( aloite.getAloiteID());
       out.write("</td>\n");
       out.write("                            ");
@@ -171,30 +189,30 @@ public final class tulostaAloitteet_jsp extends org.apache.jasper.runtime.HttpJs
 
                                     if (vaihe.equals("1")) { 
       out.write("\n");
-      out.write("                            <td>-</td><br>\n");
+      out.write("                            <td>-</td>\n");
       out.write("                            ");
 } else if (vaihe.equals("2")) {
       out.write("\n");
-      out.write("                    <td>Odottamassa</td><br>\n");
-      out.write("                    ");
+      out.write("                            <td>Odottamassa</td>\n");
+      out.write("                            ");
  } else if (vaihe.equals("3")) {
       out.write("\n");
-      out.write("                    <td>Työn alla</td><br>\n");
-      out.write("                    ");
+      out.write("                            <td>Työn alla</td>\n");
+      out.write("                            ");
  } else {
       out.write("\n");
-      out.write("                    <td>Valmis</td><br>\n");
-      out.write("                    ");
+      out.write("                            <td>Valmis</td>\n");
+      out.write("                            ");
 }
-                    } else {
-                    
+                            } else {
+                            
       out.write("\n");
-      out.write("                    <td>-</td><br>\n");
-      out.write("                    ");
+      out.write("                            <td>-</td>\n");
+      out.write("                            ");
 }
       out.write("\n");
-      out.write("                    <td>\n");
-      out.write("                        <form name=\"lisays\" action='../../Aloitelaatikko_ver2/jspSivut/poistaAloite.jsp?aloiteID=");
+      out.write("                            <td>\n");
+      out.write("                                <form name=\"lisays\" action='../../Aloitelaatikko_ver2/jspSivut/poistaAloite.jsp?aloiteID=");
       out.print(aloite.getAloiteID());
       out.write("&aloitenimi=");
       out.print(aloite.getAloitenimi());
@@ -203,16 +221,16 @@ public final class tulostaAloitteet_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("&pvm=");
       out.print( aloite.getPvm());
       out.write("' method=\"post\">\n");
-      out.write("                            <input class=\"btn delete-btn btn-danger\" type=\"submit\" value=\"X\" name=\"delete\">\n");
-      out.write("                        </form>\n");
-      out.write("                    </td>\n");
-      out.write("                    <!--<td>\n");
-      out.write("                        <form name=\"lisays\" action='../../Aloitelaatikko_ver2/jspSivut/muokkaaAloite.jsp'>\n");
-      out.write("                            <input class=\"btn btn-secondary muokkaa-btn\" type=\"submit\" value=\">\" name=\"muokkaa\">\n");
-      out.write("                        </form>\n");
-      out.write("                    </td>-->\n");
-      out.write("                    </tr>\n");
-      out.write("                    ");
+      out.write("                                    <input class=\"btn delete-btn btn-danger\" type=\"submit\" value=\"X\" name=\"delete\">\n");
+      out.write("                                </form>\n");
+      out.write("                            </td>\n");
+      out.write("                            <!--<td>\n");
+      out.write("                                <form name=\"lisays\" action='../../Aloitelaatikko_ver2/jspSivut/muokkaaAloite.jsp'>\n");
+      out.write("                                    <input class=\"btn btn-secondary muokkaa-btn\" type=\"submit\" value=\">\" name=\"muokkaa\">\n");
+      out.write("                                </form>\n");
+      out.write("                            </td>-->\n");
+      out.write("                        </tr>\n");
+      out.write("                        ");
 }
       out.write("\n");
       out.write("                    </tbody>\n");

@@ -44,7 +44,7 @@
     <body>
         <div class="container">
             <div class="form-group">
-                <h1 class="h1">Käyttäjän lisääminen</h1>
+                <h1 class="h1">Käyttäjän lisääminen</h1><br>
                 <form class="form-signin" name="lisays" action="../../Aloitelaatikko_ver2/lisaaKayttaja" method="post">
                     <input class="form-control" type="text" name="etunimi" placeholder="Etunimi"><br>
                     <input class="form-control" type="text" name="sukunimi" placeholder="Sukunimmi"><br>
@@ -57,8 +57,8 @@
                         <option value="Ohjausryhma">Ohjausryhmä</option>
                         <option value="Yllapito">Ylläpito</option>
                     </select><br>
-                    <input class="btn btn-primary" type="reset" value="Tyhjennä" name="reset" />
-                    <input class="btn btn-primary" type="submit" value="Talleta" name="talleta" />            
+                    <input class="btn btn-danger" type="reset" value="Tyhjennä" name="reset" />
+                    <input class="btn btn-success" type="submit" value="Talleta" name="talleta" />            
                 </form>
             </div>
         </div>
