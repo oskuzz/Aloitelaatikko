@@ -51,49 +51,10 @@ public final class tulostaAloitteetKayttaja_jsp extends org.apache.jasper.runtim
       out.write("    <head>\r\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
       out.write("        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css\">\r\n");
+      out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">\r\n");
       out.write("        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\r\n");
       out.write("        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js\"></script>\r\n");
       out.write("        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js\"></script>\r\n");
-      out.write("        <style> \r\n");
-      out.write("\r\n");
-      out.write("            body {\r\n");
-      out.write("                background-image: url(\"pictures/oceanBackground.jpg\");\r\n");
-      out.write("                background-size: cover; \r\n");
-      out.write("                color: black;\r\n");
-      out.write("                text-align: center;\r\n");
-      out.write("                padding: 70px;\r\n");
-      out.write("            }\r\n");
-      out.write("            .table {\r\n");
-      out.write("                background: rgba(255,255,255,0.7) ;\r\n");
-      out.write("            }\r\n");
-      out.write("            .muokkaa-btn{\r\n");
-      out.write("                margin-left: 6px;\r\n");
-      out.write("            }\r\n");
-      out.write("            .th-muokkaa{\r\n");
-      out.write("                width: 50px;\r\n");
-      out.write("            }\r\n");
-      out.write("            .th-nimi{\r\n");
-      out.write("                width: 100px;\r\n");
-      out.write("            }\r\n");
-      out.write("            .th-id{\r\n");
-      out.write("                width: 10px;\r\n");
-      out.write("            }\r\n");
-      out.write("            .th-tekijatunnus{\r\n");
-      out.write("                width: 50px;\r\n");
-      out.write("            }\r\n");
-      out.write("            .th-pvm{\r\n");
-      out.write("                width: 120px;\r\n");
-      out.write("            }\r\n");
-      out.write("            .td-kuvaus{\r\n");
-      out.write("                text-align: left;\r\n");
-      out.write("            }\r\n");
-      out.write("            .tr{\r\n");
-      out.write("                font-weight: 500;\r\n");
-      out.write("            }\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("        </style>\r\n");
       out.write("        <title>Hae Aloitteet</title>\r\n");
       out.write("        <link rel=\"shortcut icon\" href=\"pictures/favicon.ico\" type=\"image/x-icon\">\r\n");
       out.write("    </head>\r\n");
@@ -104,19 +65,23 @@ public final class tulostaAloitteetKayttaja_jsp extends org.apache.jasper.runtim
         
       out.write("\r\n");
       out.write("        <div class=\"container\">\r\n");
-      out.write("            <h1>Kaikki aloitteet</h1>\r\n");
-      out.write("            <div class=\"table-responsive\">\r\n");
+      out.write("            <h1>Kaikki aloitteet</h1><br>\r\n");
+      out.write("            <div class=\"table-responsive table-header\">\r\n");
       out.write("                <table class=\"table table-striped\" border=\"1\">\r\n");
       out.write("                    <thead class=\"thead-dark\">\r\n");
       out.write("                        <tr>\r\n");
       out.write("                            <th class=\"th th-id\">ID</th>\r\n");
       out.write("                            <th class=\"th th-nimi\">Aloite</th>\r\n");
-      out.write("                            <th class=\"th th-kuvaus\">Kuvaus</th>\r\n");
+      out.write("                            <th class=\"th th-Kuvaus\">Kuvaus</th>\r\n");
       out.write("                            <th class=\"th th-pvm\">pvm</th>\r\n");
-      out.write("                            <th class=\"th th-tekijatunnus\">Tekijätunnus</th>\r\n");
-      out.write("                            <th class=\"th th-muokkaa\">Muokkaa</th>\r\n");
+      out.write("                            <th class=\"th th-kayttajaID\">Käyttäjä ID</th>\r\n");
+      out.write("                            <th class=\"th th-vaihe\">Vaihe</th>\r\n");
       out.write("                        </tr>\r\n");
       out.write("                    </thead>\r\n");
+      out.write("                </table>\r\n");
+      out.write("            </div>\r\n");
+      out.write("            <div class=\"table-responsive table-scroll\">\r\n");
+      out.write("                <table class=\"table table-striped\" border=\"1\">\r\n");
       out.write("                    <tbody>\r\n");
       out.write("                        ");
 
@@ -125,32 +90,51 @@ public final class tulostaAloitteetKayttaja_jsp extends org.apache.jasper.runtim
       out.write("\r\n");
       out.write("                        <tr class=\"tr\">\r\n");
       out.write("\r\n");
-      out.write("                            <td>");
+      out.write("                            <td class=\"td td-id\">");
       out.print( aloite.getAloiteID());
       out.write("</td>\r\n");
-      out.write("                            <td>");
+      out.write("                            <td class=\"td td-nimi\">");
       out.print( aloite.getAloitenimi());
       out.write("</td>\r\n");
-      out.write("                            <td class=\"td-kuvaus\">");
+      out.write("                            <td class=\"td-Kuvaus\">");
       out.print( aloite.getAloitekuvaus());
       out.write("</td>\r\n");
-      out.write("                            <td>");
+      out.write("                            <td class=\"td td-pvm\">");
       out.print( aloite.getPvm());
       out.write("</td>\r\n");
-      out.write("                            <td>");
+      out.write("                            <td class=\"td td-kayttajaID\">");
       out.print( aloite.getKayttajaID());
       out.write("</td>\r\n");
-      out.write("                            <td>\r\n");
-      out.write("                                <form name=\"lisays\" action='../../Aloitelaatikko_ver2/jspSivut/muokkaaAloite.jsp?aloiteID=");
-      out.print(aloite.getAloiteID());
-      out.write("&aloitenimi=");
-      out.print(aloite.getAloitenimi());
-      out.write("&aloitekuvaus=");
-      out.print(aloite.getAloitekuvaus());
-      out.write("' method=\"post\">\r\n");
-      out.write("                                    <input class=\"btn btn-danger muokkaa-btn\" type=\"submit\" value=\">\" name=\"muokkaa\">\r\n");
-      out.write("                                </form>\r\n");
-      out.write("                            </td>\r\n");
+      out.write("                            ");
+
+                                String vaihe = "";
+                                if (tietovarasto.olemassaolevaToimenpide(aloite.getAloiteID())) {
+                                    vaihe = tietovarasto.getVaihe();
+
+                                    if (vaihe.equals("1")) { 
+      out.write("\r\n");
+      out.write("                            <td class=\"td td-vaihe\">-</td>\r\n");
+      out.write("                            ");
+} else if (vaihe.equals("2")) {
+      out.write("\r\n");
+      out.write("                            <td class=\"td td-vaihe\">Odottamassa</td>\r\n");
+      out.write("                            ");
+ } else if (vaihe.equals("3")) {
+      out.write("\r\n");
+      out.write("                            <td class=\"td td-vaihe\">Työn alla</td>\r\n");
+      out.write("                            ");
+ } else {
+      out.write("\r\n");
+      out.write("                            <td class=\"td td-vaihe\">Valmis</td>\r\n");
+      out.write("                            ");
+}
+                            } else {
+                            
+      out.write("\r\n");
+      out.write("                            <td class=\"td td-vaihe\">-</td>\r\n");
+      out.write("                            ");
+}
+      out.write("\r\n");
       out.write("                        </tr>\r\n");
       out.write("                        ");
 }

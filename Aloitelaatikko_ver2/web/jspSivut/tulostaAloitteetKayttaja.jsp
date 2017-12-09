@@ -34,7 +34,6 @@
                             <th class="th th-pvm">pvm</th>
                             <th class="th th-kayttajaID">Käyttäjä ID</th>
                             <th class="th th-vaihe">Vaihe</th>
-                            <th class="th th-muokkaa">Muokkaa</th>
                         </tr>
                     </thead>
                 </table>
@@ -70,11 +69,6 @@
                             %>
                             <td class="td td-vaihe">-</td>
                             <%}%>
-                            <td class="td td-muokkaa">
-                                <form name="lisays" action='../../Aloitelaatikko_ver2/jspSivut/muokkaaAloite.jsp?aloiteID=<%=aloite.getAloiteID()%>&aloitenimi=<%=aloite.getAloitenimi()%>&aloitekuvaus=<%=aloite.getAloitekuvaus()%>' method="post">
-                                    <input class="btn btn-danger muokkaa-btn" type="submit" value=">" name="muokkaa">
-                                </form>
-                            </td>
                         </tr>
                         <%}%>
                     </tbody>

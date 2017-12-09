@@ -44,6 +44,7 @@
                     <tbody>
                         <%
                             for (Aloite aloite : tietovarasto.kayttajanAloitteet(2)) {
+                                //Tietovarasto.getKayttajaID()
                         %>
                         <tr class="tr">
 

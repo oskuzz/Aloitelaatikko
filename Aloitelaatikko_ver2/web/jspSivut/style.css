@@ -17,7 +17,7 @@ th, td{
 .table-scroll{
     max-height: 700px;
     width: 1127px;
-    
+    overflow-y: scroll;
 }
 .table-header {
     height: 50px;
