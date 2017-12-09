@@ -50,8 +50,8 @@ public class Tietovarasto {
     public static int getKayttajaID() {
         return kayttaja.getKayttajaID();
     }
-    
-    public String getVaihe(){
+
+    public String getVaihe() {
         return vaihe;
     }
 
@@ -62,6 +62,36 @@ public class Tietovarasto {
      */
     public static String haeRyhma() {
         return kayttaja.getRyhma();
+    }
+
+    public ArrayList<Aloite> kayttajanAloitteet(int kayttajaID) {
+        ArrayList<Aloite> aloitteet = new ArrayList<>();
+        Connection yhteys = YhteydenHallinta.avaaYhteys(ajuri, url, this.kayttajatunnus, salasana);
+        PreparedStatement hakulause = null;
+        ResultSet tulosjoukko = null;
+
+        if (yhteys == null) {
+            return null;
+        }
+        try {
+            String SQL = "select * from aloite where kayttajaID=?";
+            hakulause = yhteys.prepareStatement(SQL);
+            hakulause.setInt(1, kayttajaID);
+            tulosjoukko = hakulause.executeQuery();
+            while (tulosjoukko.next()) {
+                Aloite aloite = new Aloite(tulosjoukko.getInt(1), tulosjoukko.getString(2), tulosjoukko.getString(3), tulosjoukko.getString(4), tulosjoukko.getString(5));
+                aloitteet.add(aloite);
+            }
+            return aloitteet;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            // Suljetaan yhteysx tietokantaa
+            YhteydenHallinta.suljeLause(hakulause);
+            YhteydenHallinta.suljeYhteys(yhteys);
+        }
     }
 
     public boolean olemassaolevaToimenpide(int aloiteID) {
