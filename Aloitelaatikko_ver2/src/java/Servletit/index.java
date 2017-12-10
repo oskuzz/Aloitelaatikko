@@ -41,7 +41,6 @@ public class index extends HttpServlet {
             Tietovarasto tietovarasto = new Tietovarasto();
             String uName = request.getParameter("uName");
             String salasana = request.getParameter("salasana");
-
             if (tietovarasto.haeKayttaja(uName, salasana)) {
                 if (Tietovarasto.haeRyhma().equals("Yllapito")) {
                     response.sendRedirect("jspSivut/lisaaKayttaja.jsp");

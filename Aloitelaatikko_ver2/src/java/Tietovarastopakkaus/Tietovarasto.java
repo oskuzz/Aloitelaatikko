@@ -54,7 +54,7 @@ public class Tietovarasto {
     public String getVaihe() {
         return vaihe;
     }
-
+    
     /**
      * hakee ryhmän johon kirjautunut käyttäjä kuuluu
      *

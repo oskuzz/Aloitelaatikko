@@ -33,7 +33,10 @@
             h1{
                 margin-bottom: 20px;
             }
-            
+            .kaikki{
+                margin-right: 10px;
+            }
+
 
         </style>
         <title>Aloitteen kirjaaminen</title>
@@ -50,9 +53,14 @@
                     <input class="btn btn-success talleta" type="submit" value="Talleta" name="talleta" >            
                 </form>
                 <br>
-                <form class="form-signin" name="lisays" action="../../Aloitelaatikko_ver2/jspSivut/tulostaAloitteetKayttaja.jsp" method="post">
-                    <input class="btn btn-primary btn-block" type="submit" value="Kaikki aloitteet" name="siirry">
-                </form>
+                <div class="btn-group">
+                    <form class="form-signin" name="lisays" action="../../Aloitelaatikko_ver2/jspSivut/tulostaAloitteetKayttaja.jsp" method="post">
+                        <input class="btn btn-primary kaikki" type="submit" value="Kaikki aloitteet" name="siirry">
+                    </form>
+                    <form class="form-signin" name="lisays" action="../../Aloitelaatikko_ver2/jspSivut/kayttajanAloitteet.jsp" method="post">
+                        <input class="btn btn-primary omat" type="submit" value="Omat Aloitteet" name="siirry">
+                    </form>
+                </div>
             </div>
         </div>
 

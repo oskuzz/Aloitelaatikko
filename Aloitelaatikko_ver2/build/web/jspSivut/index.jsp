@@ -10,6 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
@@ -33,6 +34,7 @@
             h1{
                 margin-bottom: 20px;
             }
+            
 
         </style>
         <title>Aloitelaatikko</title>
@@ -49,5 +51,11 @@
                 </form>
             </div>
         </div>
+
+        <footer class="mainfooter">
+            <div class="footer">
+                <p class="text-xs-center">&copy; Copyright 2017 - Osku Sirpoma.</p>
+            </div>
+        </footer>
     </body>
 </html>
