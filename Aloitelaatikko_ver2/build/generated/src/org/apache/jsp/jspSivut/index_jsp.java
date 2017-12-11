@@ -49,6 +49,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css\">\n");
+      out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">\n");
       out.write("        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\n");
       out.write("        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js\"></script>\n");
       out.write("        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js\"></script>\n");
@@ -72,6 +73,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            h1{\n");
       out.write("                margin-bottom: 20px;\n");
       out.write("            }\n");
+      out.write("            \n");
       out.write("\n");
       out.write("        </style>\n");
       out.write("        <title>Aloitelaatikko</title>\n");
@@ -89,8 +91,10 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            </div>\n");
       out.write("        </div>\n");
       out.write("\n");
-      out.write("        <footer>\n");
-      out.write("            <p>Posted by: Osku Sirpoma</p>\n");
+      out.write("        <footer class=\"mainfooter\">\n");
+      out.write("            <div class=\"footer\">\n");
+      out.write("                <p class=\"text-xs-center\">&copy; Copyright 2017 - Osku Sirpoma.</p>\n");
+      out.write("            </div>\n");
       out.write("        </footer>\n");
       out.write("    </body>\n");
       out.write("</html>\n");

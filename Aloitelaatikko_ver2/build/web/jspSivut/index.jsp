@@ -22,7 +22,6 @@
                 text-align: center;
                 padding: 100px;
             }
-
             div {
                 max-width: 330px;
                 padding: 15px;
@@ -34,7 +33,7 @@
             h1{
                 margin-bottom: 20px;
             }
-            
+
 
         </style>
         <title>Aloitelaatikko</title>
@@ -51,7 +50,6 @@
                 </form>
             </div>
         </div>
-
         <footer class="mainfooter">
             <div class="footer">
                 <p class="text-xs-center">&copy; Copyright 2017 - Osku Sirpoma.</p>
