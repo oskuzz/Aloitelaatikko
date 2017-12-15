@@ -1,4 +1,4 @@
-body {
+body{
     background-image: url("pictures/oceanBackground.jpg");
     background-size: cover; 
     color: black;
@@ -19,12 +19,12 @@ th, td{
     width: 1127px;
     overflow-y: scroll;
 }
-.table-header {
+.table-header{
     height: 50px;
     overflow-x: visible;
     max-width: 1127px;
 }
-.td-id, .th-id {
+.td-id, .th-id{
     width: 50px;
 }
 .td-nimi, .th-nimi{
@@ -56,13 +56,13 @@ th, td{
 .td-delete, .th-delete{
     width: 70px;
 }
-.td-muokkaa, .th-muokkaa {
+.td-muokkaa, .th-muokkaa{
     width: 100px;
 }
-.btn {
+.btn{
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
 }
-footer {
+footer{
     position: fixed;
     left: 0;
     bottom: 0;
