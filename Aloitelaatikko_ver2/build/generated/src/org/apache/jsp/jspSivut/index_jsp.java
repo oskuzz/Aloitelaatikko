@@ -3,6 +3,7 @@ package org.apache.jsp.jspSivut;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import Tietovarastopakkaus.Tietovarasto;
 
 public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -44,6 +45,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
+      out.write("\r\n");
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html>\r\n");
       out.write("    <head>\r\n");
@@ -59,7 +61,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                background-size: cover; \r\n");
       out.write("                color: black;\r\n");
       out.write("                text-align: center;\r\n");
-      out.write("                padding: 100px;\r\n");
+      out.write("                padding:0px;\r\n");
+      out.write("\r\n");
       out.write("            }\r\n");
       out.write("            div {\r\n");
       out.write("                max-width: 330px;\r\n");
@@ -72,29 +75,73 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            h1{\r\n");
       out.write("                margin-bottom: 20px;\r\n");
       out.write("            }\r\n");
+      out.write("            .navbar{\r\n");
+      out.write("                background-color: rgba(0, 0, 0, 0.8);\r\n");
+      out.write("\r\n");
+      out.write("            }\r\n");
       out.write("\r\n");
       out.write("\r\n");
       out.write("        </style>\r\n");
-      out.write("        <title>Aloitelaatikko</title>\r\n");
-      out.write("        <link rel=\"shortcut icon\" href=\"pictures/favicon.ico\" type=\"image/x-icon\">\r\n");
-      out.write("    </head>\r\n");
-      out.write("    <body>\r\n");
-      out.write("        <div class=\"container\">\r\n");
-      out.write("            <div class=\"form-group\">\r\n");
-      out.write("                <h1>Kirjautuminen</h1>\r\n");
-      out.write("                <form class=\"form-signin\" name=\"lisays\" action=\"../../Aloitelaatikko_ver2/index\" method=\"post\">\r\n");
-      out.write("                    <input class=\"form-control\" type=\"text\" name=\"uName\" placeholder=\"Käyttäjätunnus\"><br>\r\n");
-      out.write("                    <input class=\"form-control\" type=\"password\" name=\"salasana\" placeholder=\"Salasana\"><br>\r\n");
-      out.write("                    <input class=\"btn btn-primary\" type=\"submit\" value=\"Kirjaudu\" name=\"talleta\" >\r\n");
-      out.write("                </form>\r\n");
-      out.write("            </div>\r\n");
+      out.write("    <title>Aloitelaatikko</title>\r\n");
+      out.write("    <link rel=\"shortcut icon\" href=\"pictures/favicon.ico\" type=\"image/x-icon\">\r\n");
+      out.write("</head>\r\n");
+      out.write("<body>\r\n");
+      out.write("    <nav class=\"navbar navbar-expand-sm navbar-dark\">\r\n");
+      out.write("        <!-- Brand/logo -->\r\n");
+      out.write("        <a href=\"#\" class=\"navbar-brand\"><img src=\"pictures/icon2.png\"></a>\r\n");
+      out.write("        <a href=\"#\" class=\"navbar-brand\"><img src=\"pictures/Aloitelaatikko_teksti.png\"></a>\r\n");
+      out.write("\r\n");
+      out.write("        <!-- Links \r\n");
+      out.write("        <ul class=\"navbar-nav\">\r\n");
+      out.write("            <li class=\"nav-item\">\r\n");
+      out.write("                <a class=\"nav-link\" href=\"#\">Link 1</a>\r\n");
+      out.write("            </li>\r\n");
+      out.write("            <li class=\"nav-item\">\r\n");
+      out.write("                <a class=\"nav-link\" href=\"#\">Link 2</a>\r\n");
+      out.write("            </li>\r\n");
+      out.write("            <li class=\"nav-item\">\r\n");
+      out.write("                <a class=\"nav-link\" href=\"#\">Link 3</a>\r\n");
+      out.write("            </li>\r\n");
+      out.write("        </ul> -->\r\n");
+      out.write("    </nav>\r\n");
+      out.write("    <div class=\"container\">\r\n");
+      out.write("        <div class=\"form-group\">\r\n");
+      out.write("            <h1>Kirjautuminen</h1>\r\n");
+      out.write("            <form class=\"form-signin\" name=\"lisays\" action=\"../../Aloitelaatikko_ver2/index\" method=\"post\">\r\n");
+      out.write("                ");
+
+                    if (!Tietovarasto.getLogin()) {
+                
+      out.write("\r\n");
+      out.write("                <style>\r\n");
+      out.write("                    .form-control{\r\n");
+      out.write("                        border: 1px solid red;\r\n");
+      out.write("                    }\r\n");
+      out.write("\r\n");
+      out.write("                    .error-message{\r\n");
+      out.write("                        color: darkred;\r\n");
+      out.write("                        font-size: 18px;\r\n");
+      out.write("                    }\r\n");
+      out.write("\r\n");
+      out.write("                </style>\r\n");
+      out.write("                <p class=\"error-message\">Käyttäjä tunnus tai salasana on väärin</p>\r\n");
+      out.write("                ");
+
+                    }
+                
+      out.write("\r\n");
+      out.write("                <input class=\"form-control\" type=\"text\" name=\"uName\" placeholder=\"Käyttäjätunnus\"><br>\r\n");
+      out.write("                <input class=\"form-control\" type=\"password\" name=\"salasana\" placeholder=\"Salasana\"><br>\r\n");
+      out.write("                <input class=\"btn btn-primary\" type=\"submit\" value=\"Kirjaudu\" name=\"talleta\" >\r\n");
+      out.write("            </form>\r\n");
       out.write("        </div>\r\n");
-      out.write("        <footer class=\"mainfooter\">\r\n");
-      out.write("            <div class=\"footer\">\r\n");
-      out.write("                <p class=\"text-xs-center\">&copy; Copyright 2017 - Osku Sirpoma.</p>\r\n");
-      out.write("            </div>\r\n");
-      out.write("        </footer>\r\n");
-      out.write("    </body>\r\n");
+      out.write("    </div>\r\n");
+      out.write("    <footer class=\"mainfooter\">\r\n");
+      out.write("        <div class=\"footer\">\r\n");
+      out.write("            <p class=\"text-xs-center\">&copy; Copyright 2017 - Osku Sirpoma.</p>\r\n");
+      out.write("        </div>\r\n");
+      out.write("    </footer>\r\n");
+      out.write("</body>\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
