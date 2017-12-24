@@ -23,6 +23,7 @@ public class Tietovarasto {
     private String salasana;
     private static Kayttaja kayttaja;
     private String vaihe;
+    private static boolean Login = true;
 
     /**
      *
@@ -53,6 +54,14 @@ public class Tietovarasto {
 
     public String getVaihe() {
         return vaihe;
+    }
+
+    public static boolean getLogin() {
+        return Login;
+    }
+
+    public static void setLogin(boolean login) {
+        Login = login;
     }
 
     /**

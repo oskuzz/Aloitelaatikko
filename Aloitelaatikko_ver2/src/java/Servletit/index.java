@@ -42,14 +42,16 @@ public class index extends HttpServlet {
             String uName = request.getParameter("uName");
             String salasana = request.getParameter("salasana");
             if (tietovarasto.haeKayttaja(uName, salasana)) {
+                Tietovarasto.setLogin(true);
                 if (Tietovarasto.haeRyhma().equals("Yllapito")) {
                     response.sendRedirect("jspSivut/lisaaKayttaja.jsp");
                 } else if (Tietovarasto.haeRyhma().equals("Ohjausryhma")) {
                     response.sendRedirect("jspSivut/tulostaAloitteet.jsp");
                 } else {
-                    response.sendRedirect("jspSivut/lisaaAloite.jsp");
+                    response.sendRedirect("jspSivut/etusivuKayttaja.jsp");
                 }
             } else {
+                Tietovarasto.setLogin(false);
                 response.sendRedirect("jspSivut/index.jsp");
             }
         }
