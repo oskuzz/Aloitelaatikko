@@ -58,7 +58,7 @@ public class muokkaaAloite extends HttpServlet {
             out.println("<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js\"></script>");
             out.println("<style>\n"
                     + "            body {\n"
-                    + "                background-image: url(\"jspSivut/pictures/oceanBackground.jpg\");\n"
+                    + "                background-image: url(\"JSP/pictures/oceanBackground.jpg\");\n"
                     + "                background-size: cover; \n"
                     + "                color: black;\n"
                     + "                text-align: center;\n"

@@ -34,7 +34,9 @@
                             <th class="th th-pvm">pvm</th>
                             <th class="th th-kayttajaID">Käyttäjä ID</th>
                             <th class="th th-vaihe">Vaihe</th>
+                            <%if(Tietovarasto.haeRyhma().equals("Ohjausryhma")){%>
                             <th class="th-delete">Poista</th>
+                            <%}%>
                         </tr>
                     </thead>
                 </table>
@@ -49,7 +51,7 @@
                         <tr class="tr">
 
                             <td class="td td-id"><%= aloite.getAloiteID()%></td>
-                            <% if (!tietovarasto.olemassaolevaToimenpide(aloite.getAloiteID())) {%>
+                            <% if (!tietovarasto.olemassaolevaToimenpide(aloite.getAloiteID()) && Tietovarasto.haeRyhma().equals("Ohjausryhma")) {%>
                             <td class="td td-nimi"><a href='lisaaToimenpide.jsp?aloiteID=<%=aloite.getAloiteID()%>&aloitekuvaus=<%=aloite.getAloitekuvaus()%>&aloitenimi=<%=aloite.getAloitenimi()%>'><%=aloite.getAloitenimi()%></a></td>
                                 <% } else {%>
                             <td class="td td-nimi"><%=aloite.getAloitenimi()%></td>
@@ -74,16 +76,14 @@
                             %>
                             <td class="td td-vaihe">-</td>
                             <%}%>
+                            <%if (Tietovarasto.haeRyhma().equals("Ohjausryhma")) {%>
                             <td class="td td-delete">
+
                                 <form name="lisays" action='../../Aloitelaatikko_ver2/jspSivut/poistaAloite.jsp?aloiteID=<%=aloite.getAloiteID()%>&aloitenimi=<%=aloite.getAloitenimi()%>&aloitekuvaus=<%=aloite.getAloitekuvaus()%>&pvm=<%= aloite.getPvm()%>' method="post">
                                     <input class="btn delete-btn btn-danger" type="submit" value="X" name="delete">
                                 </form>
                             </td>
-                            <!--<td>
-                                <form name="lisays" action='../../Aloitelaatikko_ver2/jspSivut/muokkaaAloite.jsp'>
-                                    <input class="btn btn-secondary muokkaa-btn" type="submit" value=">" name="muokkaa">
-                                </form>
-                            </td>-->
+                            <%}%>
                         </tr>
                         <%}%>
                     </tbody>
