@@ -42,7 +42,7 @@
                 <table class="table table-striped" border="1">
                     <tbody>
                         <%
-                            for (Aloite aloite : tietovarasto.haeKaikkiAloitteet()) {
+                            for (Aloite aloite : tietovarasto.kayttajanAloitteet(Tietovarasto.getKayttajaID())) {
                         %>
                         <tr class="tr">
 

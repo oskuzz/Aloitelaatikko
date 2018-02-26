@@ -7,6 +7,7 @@ package Tietovarastopakkaus;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -71,6 +72,70 @@ public class Tietovarasto {
      */
     public static String haeRyhma() {
         return kayttaja.getRyhma();
+    }
+    
+    public boolean kayttajanPoistaminen(int kayttajaID) {
+        toimenpiteenPoistaminen(kayttajaID);
+        Connection yhteys = null;
+        PreparedStatement lisayslause = null;
+        try {
+            yhteys = YhteydenHallinta.avaaYhteys(ajuri, url, kayttajatunnus, salasana);
+            if (yhteys == null) {
+                return false;
+            }
+
+            String SQL = "delete from kayttajat where kayttajaID=?";
+            lisayslause = yhteys.prepareStatement(SQL);
+            lisayslause.setInt(1, kayttajaID);
+            return lisayslause.executeUpdate() > 0;
+
+        } catch (SQLException ex) {
+            // Jos tuli virhe, niin hypätään tänne
+            ex.printStackTrace();
+            return false;
+        } finally {
+            // Suljetaan yhteysx tietokantaa
+            YhteydenHallinta.suljeLause(lisayslause);
+            YhteydenHallinta.suljeYhteys(yhteys);
+        }
+
+    }
+
+    public ArrayList<Kayttaja> haeKaikkiKayttajat() {
+        // Luodaan lista käyttäjistä
+        ArrayList<Kayttaja> kayttajat = new ArrayList<>();
+        // Määritellään tietokannan käsittelyyn tarvittavat oliomuuttujat
+        Connection yhteys = null;
+        PreparedStatement hakulause = null;
+        ResultSet tulosjoukko = null;
+        try {
+            // Avataan tietokantayhteys
+            yhteys = YhteydenHallinta.avaaYhteys(ajuri, url, kayttajatunnus, salasana);
+            // Tarkistetaan onko yhteys tietokantaan olemassa
+            if (yhteys != null) {
+                // Määritellään SQL-lause, jolla haetaan kaikki käyttäjät
+                String haeKaikkiSql = "select * from kayttajat";
+                // Suoritetaan tietokantahaku
+                hakulause = yhteys.prepareStatement(haeKaikkiSql);
+                // Talletetaan kaikki käyttäjät oliomuuttujaan tulosjoukko
+                tulosjoukko = hakulause.executeQuery();
+            }
+            // Luodaan lista käyttäjistä
+            while (tulosjoukko.next()) {
+                Kayttaja kayttaja = new Kayttaja(tulosjoukko.getInt(1), tulosjoukko.getString(2), tulosjoukko.getString(3), tulosjoukko.getString(4), tulosjoukko.getString(5), tulosjoukko.getString(6), tulosjoukko.getString(7), tulosjoukko.getString(8), tulosjoukko.getString(9));
+            kayttajat.add(kayttaja);
+            }
+        } catch (SQLException e) {
+            return null;
+        } finally {
+            // Suljetaan yhteydet
+            YhteydenHallinta.suljeTulosjoukko(tulosjoukko);
+            YhteydenHallinta.suljeLause(hakulause);
+            YhteydenHallinta.suljeYhteys(yhteys);
+        }
+        // Palautetaan lista käyttäjistä
+        System.out.println(kayttajat);
+        return kayttajat;
     }
 
     public ArrayList<Aloite> kayttajanAloitteet(int kayttajaID) {

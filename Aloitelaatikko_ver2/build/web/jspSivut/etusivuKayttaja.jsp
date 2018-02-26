@@ -43,7 +43,7 @@
         <div class="container">
             <div class="form-group">
                 <h1>Käyttäjän etusivu</h1>
-                <form class="form-signin" name="lisays" action="../../Aloitelaatikko_ver2/jspSivut/lisaaAloite.jsp" method="post">
+                <form class="form-signin" name="lisays" action="../../Aloitelaatikko_ver2/jspSivut/tulostaKayttajat.jsp" method="post">
                     <input class="btn btn-success" type="submit" value="Uusi aloite" name="talleta">
                 </form>
                 <form class="form-signin" name="lisays" action="../../Aloitelaatikko_ver2/jspSivut/tulostaAloitteetKayttaja.jsp" method="post">
