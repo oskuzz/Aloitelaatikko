@@ -47,7 +47,7 @@
             }
         </style>
 
-        <title>Käyttäjän etusivu</title>
+        <title>Käyttäjän Etusivu</title>
         <link rel="shortcut icon" href="/Aloitelaatikko_ver2/jspSivut/favicon.ico" type="image/x-icon">
     </head>
     <body>

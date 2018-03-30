@@ -17,15 +17,18 @@
 
         <link href="../CSS/signin.css" rel="stylesheet" type="text/css"/>
         <link href="../CSS/style3.css" rel="stylesheet" type="text/css"/>
-        
+
         <style>
             footer{
                 font-family: Brush Script MT;
                 color: white;
                 font-size: 30px;
             }
+            .copyright{
+                margin-bottom: 15px;
+            }
         </style>
-        
+
         <title>Aloitelaatikko</title>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     </head>
@@ -34,11 +37,11 @@
             <!-- Brand/logo -->
             <a href="etusivuKayttaja.jsp" class="navbar-brand"><img src="/Aloitelaatikko_ver2/jspSivut/pahvilaatikko2.png"></a>
             <a class="navbar-brand" href="etusivuKayttaja.jsp"><img src="/Aloitelaatikko_ver2/jspSivut/Aloitelaatikko_teksti.png"></a>
-            <a href="etusivuKayttaja.jsp" class="navbar-brand"><img src="/Aloitelaatikko_ver2/jspSivut/pahvilaatikko2.png"></a>
+            <a href="etusivuKayttaja.jsp" class="navbar-brand"><img src="/Aloitelaatikko_ver2/jspSivut/pahvilaatikko2.png"></a><br>
+            <img src="/Aloitelaatikko_ver2/jspSivut/Kirjautuminen.png">
         </nav>
 
         <div class="indexDiv form-group">
-            <h1>Kirjautuminen</h1>
             <form class="form-signin" name="lisays" action="../../Aloitelaatikko_ver2/index" method="post">
                 <%
                     if (Tietovarasto.getLogin() == false) {
@@ -54,15 +57,12 @@
                     Tietovarasto.setLogin(true);
                 %>
                 <input type="text" class="form-control" name="username" placeholder="Käyttäjätunnus">
-                <input type="password" class="form-control" name="salasana" placeholder="Salasana"><br>
-
+                <input type="password" class="form-control" name="salasana" placeholder="Salasana">
                 <input type="submit" class="btn btn-primary" value="Kirjaudu" name="submit">
             </form>
         </div>
         <footer class="container-fluid footer text-center fixed-bottom">
-             <a href="etusivuKayttaja.jsp" class="navbar-brand"><img src="/Aloitelaatikko_ver2/jspSivut/pahvilaatikko2.png"></a>
-            <a>Aloitelaatikko Made By Osku Sirpoma &copy;</a>
-            <a href="etusivuKayttaja.jsp" class="navbar-brand"><img src="/Aloitelaatikko_ver2/jspSivut/pahvilaatikko2.png"></a>
+            <img class="copyright" src="/Aloitelaatikko_ver2/jspSivut/Copyright.png">
         </footer>
     </body>
 </html>
