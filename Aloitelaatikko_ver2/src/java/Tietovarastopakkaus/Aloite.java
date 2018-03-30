@@ -7,17 +7,17 @@ package Tietovarastopakkaus;
 
 /**
  *
- * @author s1601396
+ * @author Osku Sirpoma
  */
 public class Aloite {
-
+    
     private int aloiteID;
     private String aloitenimi;
     private String aloitekuvaus;
     private String pvm;
-    private String kayttajaID;
+    private int kayttajaID;
 
-    public Aloite(int aloiteID, String aloitenimi, String aloitekuvaus, String pvm, String kayttajaID) {
+    public Aloite(int aloiteID, String aloitenimi, String aloitekuvaus, String pvm, int kayttajaID) {
         this.aloiteID = aloiteID;
         this.aloitenimi = aloitenimi;
         this.aloitekuvaus = aloitekuvaus;
@@ -37,12 +37,13 @@ public class Aloite {
         return aloitekuvaus;
     }
 
-    public String getKayttajaID() {
-        return kayttajaID;
-    }
-
     public String getPvm() {
         return pvm;
     }
 
+    public int getKayttajaID() {
+        return kayttajaID;
+    }
+    
 }
+

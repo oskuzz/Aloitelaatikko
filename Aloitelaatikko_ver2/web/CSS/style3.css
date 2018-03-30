@@ -1,0 +1,81 @@
+/* 
+    Created on : Dec 8, 2017, 12:15:26 AM
+    Author     : haaar
+*/
+
+body {
+    font: 20px "Montserrat", sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
+}
+
+p {
+    font-size: 16px;
+}
+
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 3px;
+    background-color: rgba(52, 58, 64, 0.85);
+    display: block !important;
+}
+
+.navbar li a{
+    color: #0fd8e2 !important;
+}
+
+.navbar-nav li a:hover {
+    color: #0daa7b !important;
+}
+
+/* valikon logotekstin väri */
+.navbar-brand { 
+    color: #0fd8e2 !important;
+    margin-right: 0px;
+}
+
+.test{
+    color: #000;
+}
+
+/* Containerin 1 (tervetuloa) värit */
+.bg-1 { 
+    background-color: #1abc9c; /* Green */
+    color: #ffffff;
+}
+
+/* Containerin 2 (lomake) värit */
+.bg-2 { 
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+}
+
+/* Containerin täyte */
+.container-fluid {
+    padding-top: 15px;
+    padding-bottom: 0px;
+}
+
+.indexBody {
+    background-image: url("../jspSivut/spagettikissa.jpg");
+    background-size: cover;
+    color: black;
+    text-align: center;
+}
+
+.indexDiv {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+/* Alatunnisteen säädöt */
+footer {
+    background-color: rgba(52, 58, 64, 0.85);
+    color: white;
+}

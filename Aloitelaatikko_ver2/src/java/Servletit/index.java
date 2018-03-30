@@ -5,7 +5,7 @@
  */
 package Servletit;
 
-import Tietovarastopakkaus.Tietovarasto;
+import Tietovarastopakkaus.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -13,10 +13,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author s1601396
+ * @author Osku Sirpoma
  */
 @WebServlet(name = "index", urlPatterns = {"/index"})
 public class index extends HttpServlet {
@@ -35,23 +36,31 @@ public class index extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
+
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-
             Tietovarasto tietovarasto = new Tietovarasto();
-            String uName = request.getParameter("uName");
+            String username = request.getParameter("username");
             String salasana = request.getParameter("salasana");
-            if (tietovarasto.haeKayttaja(uName, salasana)) {
-                Tietovarasto.setLogin(true);
+
+            if (tietovarasto.haeKayttaja(username, salasana)) {
+                String ryhma = tietovarasto.getRyhma();
+                int kayttajaID = tietovarasto.getKayttajaID();
+                HttpSession session = request.getSession();
+                // Sessio vanhentuu tunnin kuluessa (60*60s)
+                session.setMaxInactiveInterval(60 * 60);
+                session.setAttribute("ryhma", ryhma);
+                session.setAttribute("kayttajaID", kayttajaID);
+                session.setAttribute("knimi", username);
                 if (Tietovarasto.haeRyhma().equals("Yllapito")) {
-                    response.sendRedirect("jspSivut/lisaaKayttaja.jsp");
+                    response.sendRedirect("jspSivut/LoggedJsp/Yllapito/etusivuYllapito.jsp");
                 } else if (Tietovarasto.haeRyhma().equals("Ohjausryhma")) {
-                    response.sendRedirect("jspSivut/tulostaAloitteet.jsp");
+                    response.sendRedirect("jspSivut/LoggedJsp/Ohjausryhma/etusivuOhjausryhma.jsp");
                 } else {
-                    response.sendRedirect("jspSivut/etusivuKayttaja.jsp");
+                    response.sendRedirect("jspSivut/LoggedJsp/Kayttaja/etusivuKayttaja.jsp");
                 }
             } else {
-                Tietovarasto.setLogin(false);
+                tietovarasto.setLogin(false);
                 response.sendRedirect("jspSivut/index.jsp");
             }
         }
@@ -69,7 +78,7 @@ public class index extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+
     }
 
     /**

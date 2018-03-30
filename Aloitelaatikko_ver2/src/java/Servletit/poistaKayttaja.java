@@ -5,7 +5,6 @@
  */
 package Servletit;
 
-import Tietovarastopakkaus.Tietovarasto;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -13,59 +12,66 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import Tietovarastopakkaus.Tietovarasto;
 
 /**
  *
- * @author osku0
+ * @author Osku Sirpoma
  */
 @WebServlet(name = "poistaKayttaja", urlPatterns = {"/poistaKayttaja"})
 public class poistaKayttaja extends HttpServlet {
-
+    
     private Tietovarasto tietovarasto = new Tietovarasto();
 
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
+
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+
             String kayttajaID = request.getParameter("kayttajaID");
 
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<meta http-equiv=\"refresh\" content=\"3;url=jspSivut/tulostaKayttajat.jsp\" />");
+            out.println("<meta http-equiv= \"refresh\" content=\"5; url= jspSivut/LoggedJsp/Yllapito/tulostaKayttajat.jsp\" />");
             out.println("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css\">");
             out.println("<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>");
-            out.println("<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js\"></script>    ");
+            out.println("<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js\"></script>");
             out.println("<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js\"></script>");
             out.println("<style>\n"
                     + "            body {\n"
-                    + "                background-image: url(\"jspSivut/pictures/oceanBackground.jpg\");\n"
-                    + "                background-size: cover; \n"
+                    + "                background-image: url(\"jspSivut/spagettikissa.jpg\");\n"
+                    + "                background-size: cover;\n"
                     + "                color: black;\n"
                     + "                text-align: center;\n"
                     + "                padding: 70px;\n"
                     + "            }\n"
-                    + "\n"
-                    + "            div {\n"
-                    + "                max-width: 330px;\n"
-                    + "                padding: 15px;\n"
-                    + "                margin: 0 auto;\n"
-                    + "            }\n"
                     + "        </style>");
+            out.println("");
+            out.println("");
+            out.println("");
             out.println("<title>Käyttäjän poistaminen</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Käyttäjän poistaminen</h1>");
-            out.println("<h2>Uudelleenohjaus 3 sekunnin kuluttua...</h2>");
+            out.println("<h2>Sivu uudelleenohjataan 5 sekunnin kuluttua</h2>");
             out.println("</body>");
             out.println("</html>");
 
-            if (tietovarasto.aloitteenPoistaminen(Integer.parseInt(kayttajaID))) {
-                out.println("<h2>Poisto onnistui</h2>");
-
+            if (tietovarasto.poistaKayttaja(Integer.parseInt(kayttajaID))) {
+                out.println("<h1>Poistaminen onnistui</h1>");
             } else {
                 out.println("<h2>Poisto epäonnistui</h2>");
             }

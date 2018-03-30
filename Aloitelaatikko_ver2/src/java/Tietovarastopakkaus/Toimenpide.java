@@ -7,10 +7,10 @@ package Tietovarastopakkaus;
 
 /**
  *
- * @author s1601396
+ * @author Osku Sirpoma
  */
 public class Toimenpide {
-
+    
     private int toimenpideID;
     private String kuvaus;
     private String pvm;
@@ -25,10 +25,6 @@ public class Toimenpide {
         this.kayttajaID = kayttajaID;
         this.aloiteID = aloiteID;
         this.vaihe = vaihe;
-    }
-
-    public String getVaihe() {
-        return vaihe;
     }
 
     public int getToimenpideID() {
@@ -50,5 +46,9 @@ public class Toimenpide {
     public int getAloiteID() {
         return aloiteID;
     }
-
+    
+    public String getVaihe() {
+        return vaihe;
+    }
+    
 }
