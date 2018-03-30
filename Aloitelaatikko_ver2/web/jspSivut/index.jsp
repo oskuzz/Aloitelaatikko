@@ -24,9 +24,7 @@
                 color: white;
                 font-size: 30px;
             }
-            .copyright{
-                margin-bottom: 15px;
-            }
+            
         </style>
 
         <title>Aloitelaatikko</title>

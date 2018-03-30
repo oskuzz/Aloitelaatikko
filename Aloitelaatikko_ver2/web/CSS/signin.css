@@ -1,8 +1,8 @@
 .form-signin {
-  max-width: 330px; /* lomakkeen leveys */
-  padding: 15px;
-  margin: 0 auto;
-  /* background-color: #1461B8; /* lomakkeen taustaväri */  
+    max-width: 330px; /* lomakkeen leveys */
+    padding: 15px;
+    margin: 0 auto;
+    /* background-color: #1461B8; /* lomakkeen taustaväri */  
 }
 
 .container{
@@ -12,31 +12,34 @@
 }
 
 .form-signin .form-signin-heading .form-signin .checkbox {
-  /* border: black solid 2px; */
-  /* padding: 5px; */
-  margin-bottom: 10px; /* alareunan marginaali */
+    /* border: black solid 2px; */
+    /* padding: 5px; */
+    margin-bottom: 10px; /* alareunan marginaali */
 }
 .form-signin .checkbox {
-  font-weight: 400;
+    font-weight: 400;
 }
 .form-signin .form-control {
-  position: relative;
-  box-sizing: border-box;
-  height: auto;
-  padding: 10px; /* esim. tekstilaatikon täyte */
-  font-size: 16px; /* esim. painikkeen tekstin fontto */
-  margin-bottom: 10px;
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px; /* esim. tekstilaatikon täyte */
+    font-size: 16px; /* esim. painikkeen tekstin fontto */
+    margin-bottom: 10px;
 }
 .form-signin .form-control:focus {
-  z-index: 2;
+    z-index: 2;
 }
 .form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
 }
 .form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.copyright{
+    margin-bottom: 15px;
 }

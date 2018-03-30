@@ -14,8 +14,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 
-        <link href="/Aloitelaatikko_ver2/CSS/signin.css" rel="stylesheet" type="text/css"/>
-        <link href="/Aloitelaatikko_ver2/CSS/style3.css" rel="stylesheet" type="text/css"/>
+        <link href="../../../CSS/signin.css" rel="stylesheet" type="text/css"/>
+        <link href="../../../CSS/style3.css" rel="stylesheet" type="text/css"/>
         <style>
             body {
                 background-image: url("/Aloitelaatikko_ver2/jspSivut/spagettikissav2.jpg");
@@ -75,13 +75,11 @@
         <form class="formStyle" name="kirjauduUlos" action="/Aloitelaatikko_ver2/jspSivut/index.jsp">
             <input type="submit" class="btn btn-primary btnSize" value="Kirjaudu ulos" name="kirjauduUlos">
             <%
-                session.invalidate();
+                //session.invalidate();
             %>
         </form>
         <footer class="container-fluid footer text-center fixed-bottom">
-            <a href="etusivuKayttaja.jsp" class="navbar-brand"><img src="/Aloitelaatikko_ver2/jspSivut/pahvilaatikko2.png"></a>
-            <a>Aloitelaatikko Made By Osku Sirpoma &copy;</a>
-            <a href="etusivuKayttaja.jsp" class="navbar-brand"><img src="/Aloitelaatikko_ver2/jspSivut/pahvilaatikko2.png"></a>
+            <img class="copyright" src="/Aloitelaatikko_ver2/jspSivut/Copyright.png">    
         </footer>
     </body>
 </html>
