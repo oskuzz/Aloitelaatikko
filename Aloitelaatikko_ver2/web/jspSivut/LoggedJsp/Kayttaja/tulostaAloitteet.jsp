@@ -13,6 +13,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+        <link href="/Aloitelaatikko_ver2/CSS/style.css" rel="stylesheet" type="text/css"/>
         <style>
             body {
                 background-image: url("/Aloitelaatikko_ver2/jspSivut/oceanBackground.jpg");
@@ -28,7 +29,7 @@
             .container {
                 max-width: 80% !important;
             }
-            
+
             .thAloiteID {
                 width: 5%;
             }
@@ -71,9 +72,20 @@
     <body>
         <%
             Tietovarasto tietovarasto = new Tietovarasto();
+            String url = "";
+
+            if (session.getAttribute("ryhma").equals("Ohjausryhma")) {
+                url = "../Ohjausryhma/etusivuOhjausryhma.jsp";
+            } else if (session.getAttribute("ryhma").equals("Yllapito")) {
+                url = "../Yllapito/etusivuYllapito.jsp";
+            } else if (session.getAttribute("ryhma").equals("Kayttaja")){
+                url = "etusivuKayttaja.jsp";
+            }
         %>
+
         <div class="container">
-            <h1>Kaikki aloitteet</h1>
+            <img class="header" src="/Aloitelaatikko_ver2/jspSivut/KaikkiAloitteet.png">
+            <a class="return" href=<%=url%>><img src="/Aloitelaatikko_ver2/jspSivut/Palaa.png"></a>
             <div class="table-responsive">
                 <table class="table table-striped" border="1">
                     <thead class="thead-dark">

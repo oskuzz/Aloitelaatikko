@@ -1,0 +1,20 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 1.4.2018, 13:52:57
+    Author     : osku0
+*/
+
+.header{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.return{
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}

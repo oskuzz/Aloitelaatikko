@@ -39,12 +39,6 @@
                 color: white;
                 font-size: 30px;
             }
-
-            h2 {
-                font-size: 35px;
-                font-family: Brush Script MT;
-                color: white;
-            }
         </style>
 
         <title>Ohjausryhmän etusivu</title>
@@ -56,9 +50,8 @@
             <!-- Brand -->
             <a href="etusivuKayttaja.jsp" class="navbar-brand"><img src="/Aloitelaatikko_ver2/jspSivut/pahvilaatikko2.png"></a>
             <a class="navbar-brand" href="etusivuKayttaja.jsp"><img src="/Aloitelaatikko_ver2/jspSivut/Aloitelaatikko_teksti.png"></a>
-            <a href="etusivuKayttaja.jsp" class="navbar-brand"><img src="/Aloitelaatikko_ver2/jspSivut/pahvilaatikko2.png"></a>
-            <h2>Tervetuloa <%=session.getAttribute("knimi")%></h2>
-
+            <a href="etusivuKayttaja.jsp" class="navbar-brand"><img src="/Aloitelaatikko_ver2/jspSivut/pahvilaatikko2.png"></a><br>
+            <img src="/Aloitelaatikko_ver2/jspSivut/Ohjausryhma.png">
         </nav>
         <br>
         <form class="formStyle" name="lisaaAloite" action="../Kayttaja/lisaaAloite.jsp">
@@ -70,19 +63,14 @@
         </form>
 
         <form class="formStyle" name="tulostaKaikkiAloitteet" action="../Kayttaja/tulostaAloitteet.jsp">
-            <input type="submit" class="btn btn-primary btnSize" value="Kaikki Aloitteet" name="tulostaKaikkiAloitteet">
+            <input type="submit" class="btn btn-primary btnSize" value="Kaikki Aloitteet / Toimenpiteet" name="tulostaKaikkiAloitteet">
         </form>
         <br>
         <form class="formStyle" name="kirjauduUlos" action="/Aloitelaatikko_ver2/jspSivut/index.jsp">
             <input type="submit" class="btn btn-primary btnSize" value="Kirjaudu ulos" name="kirjauduUlos">
-            <%
-                //session.invalidate();
-            %>
         </form>
         <footer class="container-fluid footer text-center fixed-bottom">
-            <a href="etusivuKayttaja.jsp" class="navbar-brand"><img src="/Aloitelaatikko_ver2/jspSivut/pahvilaatikko2.png"></a>
-            <a>Aloitelaatikko Made By Osku Sirpoma &copy;</a>
-            <a href="etusivuKayttaja.jsp" class="navbar-brand"><img src="/Aloitelaatikko_ver2/jspSivut/pahvilaatikko2.png"></a>
+            <img class="copyright" src="/Aloitelaatikko_ver2/jspSivut/Copyright.png">
         </footer>
     </body>
 </html>

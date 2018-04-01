@@ -33,13 +33,12 @@
             String aloiteID = request.getParameter("aloiteID");
 
             Aloite aloite = tietovarasto.haeAloite(Integer.parseInt(aloiteID));
-            
+
             String aloiteNimi = aloite.getAloitenimi();
             String aloiteKuvaus = aloite.getAloitekuvaus();
             String pvm = aloite.getPvm();
         %>
 
-        <h1><%=aloiteID%></h1>
         <div class="container">
             <h1>Poista aloite</h1>
             <div class="table-responsive">
