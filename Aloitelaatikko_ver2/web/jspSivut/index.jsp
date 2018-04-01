@@ -24,7 +24,7 @@
                 color: white;
                 font-size: 30px;
             }
-            
+                
         </style>
 
         <title>Aloitelaatikko</title>
