@@ -79,7 +79,7 @@
         <form class="formStyle" name="kirjauduUlos" action="/Aloitelaatikko_ver2/jspSivut/index.jsp">
             <input type="submit" class="btn btn-primary btnSize" value="Kirjaudu ulos" name="kirjauduUlos">
             <%
-                session.invalidate();
+                //session.invalidate();
             %>
         </form>
         <footer class="container-fluid footer text-center fixed-bottom">

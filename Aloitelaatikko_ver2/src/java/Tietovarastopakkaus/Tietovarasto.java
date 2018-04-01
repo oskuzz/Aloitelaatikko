@@ -11,7 +11,7 @@ public class Tietovarasto {
     private String url;
     private String kayttajatunnus;
     private String salasana;
-    private static Kayttaja naapuri;
+    private static Kayttaja kayttaja;
     public static String vaihe;
     public static boolean login = true;
     public String ryhma;
@@ -28,11 +28,11 @@ public class Tietovarasto {
     }
 
     public String getRyhma() {
-        return naapuri.getRyhma();
+        return kayttaja.getRyhma();
     }
 
     public static int getKayttajaID() {
-        return naapuri.getKayttajaID();
+        return kayttaja.getKayttajaID();
     }
 
     public static String getVaihe() {
@@ -191,10 +191,10 @@ public class Tietovarasto {
             tulosjoukko = hakulause.executeQuery();
 
             if (tulosjoukko.next()) {
-                naapuri = new Kayttaja(tulosjoukko.getInt(1), tulosjoukko.getString(2), tulosjoukko.getString(3), tulosjoukko.getString(4), tulosjoukko.getString(5), tulosjoukko.getString(6), tulosjoukko.getString(7), tulosjoukko.getString(8), tulosjoukko.getString(9));
+                kayttaja = new Kayttaja(tulosjoukko.getInt(1), tulosjoukko.getString(2), tulosjoukko.getString(3), tulosjoukko.getString(4), tulosjoukko.getString(5), tulosjoukko.getString(6), tulosjoukko.getString(7), tulosjoukko.getString(8), tulosjoukko.getString(9));
             }
 
-            if (naapuri.getKayttajatunnus().equals(kayttajatunnus) && naapuri.getSalasana().equals(salasana)) {
+            if (kayttaja.getKayttajatunnus().equals(kayttajatunnus) && kayttaja.getSalasana().equals(salasana)) {
                 return true;
             } else {
                 return false;
@@ -213,7 +213,7 @@ public class Tietovarasto {
     }
 
     public static String haeRyhma() {
-        return naapuri.getRyhma();
+        return kayttaja.getRyhma();
     }
 
     public List<Aloite> haeKaikkiAloitteet() {
@@ -455,5 +455,40 @@ public class Tietovarasto {
             YhteydenHallinta.suljeLause(hakulause);
             YhteydenHallinta.suljeYhteys(yhteys);
         }
+    }
+
+    public Aloite haeAloite(int aloiteID) {
+        Connection yhteys = null;
+        PreparedStatement hakulause = null;
+        ResultSet tulosjoukko = null;
+
+        Aloite aloite = null;
+
+        try {
+            yhteys = YhteydenHallinta.avaaYhteys(ajuri, url, kayttajatunnus, salasana);
+            if (yhteys == null) {
+                return null;
+            }
+
+            String haeKaikkiSQL = "select * from aloite where aloiteID=?";
+
+            hakulause = yhteys.prepareStatement(haeKaikkiSQL);
+            hakulause.setInt(1, aloiteID);
+            tulosjoukko = hakulause.executeQuery();
+
+            while (tulosjoukko.next()) {
+                aloite = new Aloite(tulosjoukko.getInt(1), tulosjoukko.getString(2), tulosjoukko.getString(3), tulosjoukko.getString(4), tulosjoukko.getInt(5));
+            }
+
+        } catch (SQLException ex) {
+            // Jos tuli virhe, niin hypätään tänne
+            ex.printStackTrace();
+            return null;
+        } finally {
+            // Suljetaan yhteysx tietokantaa
+            YhteydenHallinta.suljeLause(hakulause);
+            YhteydenHallinta.suljeYhteys(yhteys);
+        }
+        return aloite;
     }
 }

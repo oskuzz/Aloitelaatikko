@@ -27,11 +27,12 @@
         </style>
         <title>Muokkaa aloitetta</title>
         <link rel="shortcut icon" href="/Aloitelaatikko_ver2/jspSivut/favicon.ico" type="image/x-icon">
+
     </head>
     <body>
         <%
             Tietovarasto tietovarasto = new Tietovarasto();
-            
+
             String aloiteID = request.getParameter("aloiteID");
             String aloiteNimi = request.getParameter("aloitenimi");
             String aloiteKuvaus = request.getParameter("aloitekuvaus");
@@ -44,7 +45,8 @@
                 <input type="submit" class="btn btn-danger" name="submit" value="Muokkaa">
                 <input type="hidden" name="aloiteID" value='<%=aloiteID%>'>
             </form>
-            <form name="poista" action="../Kayttaja/poistaAloite.jsp" method="post">
+            <form name="poista" action='../Kayttaja/poistaAloite.jsp' method="post">
+                <input type="hidden" name="aloiteID" value='<%=aloiteID%>'>
                 <input class="btn btn-danger" type="submit" name="poista" value="Poista">
             </form>
         </div>

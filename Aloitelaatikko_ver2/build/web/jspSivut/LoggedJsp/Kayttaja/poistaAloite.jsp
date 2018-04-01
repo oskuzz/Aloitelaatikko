@@ -30,12 +30,16 @@
     <body>
         <%
             Tietovarasto tietovarasto = new Tietovarasto();
-
             String aloiteID = request.getParameter("aloiteID");
-            String aloiteNimi = request.getParameter("aloitenimi");
-            String aloiteKuvaus = request.getParameter("aloitekuvaus");
-            String pvm = request.getParameter("pvm");
+
+            Aloite aloite = tietovarasto.haeAloite(Integer.parseInt(aloiteID));
+            
+            String aloiteNimi = aloite.getAloitenimi();
+            String aloiteKuvaus = aloite.getAloitekuvaus();
+            String pvm = aloite.getPvm();
         %>
+
+        <h1><%=aloiteID%></h1>
         <div class="container">
             <h1>Poista aloite</h1>
             <div class="table-responsive">
@@ -57,7 +61,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <form name="lisays" action="../../Aloitelaatikko_ver2/poistaAloite" method="post">
+                <form name="lisays" action="/Aloitelaatikko_ver2/poistaAloite" method="post">
                     <input type="submit" class="btn btn-danger" name="submit" value="Poista">
                     <input type="hidden" name="aloiteID" value='<%=aloiteID%>'>
                 </form>

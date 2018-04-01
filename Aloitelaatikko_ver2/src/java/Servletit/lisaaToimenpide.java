@@ -16,6 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -43,6 +44,7 @@ public class lisaaToimenpide extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
+        HttpSession session = request.getSession();
 
         //int kayttajaID = Integer.parseInt(request.getParameter("kayttajaID"));
         String Kuvaus = request.getParameter("Kuvaus");
@@ -55,7 +57,7 @@ public class lisaaToimenpide extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<meta http-equiv= \"refresh\" content=\"5; url= jspSivut/LoggedJsp/Ohjausryhma/tulostaAloitteet.jsp\" />");
+            out.println("<meta http-equiv= \"refresh\" content=\"5; url= jspSivut/LoggedJsp/Kayttaja/tulostaAloitteet.jsp\" />");
             out.println("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css\">");
             out.println("<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>");
             out.println("<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js\"></script>");
@@ -75,8 +77,10 @@ public class lisaaToimenpide extends HttpServlet {
             out.println("<title>Toimenpiteen lisääminen</title>");
             out.println("</head>");
             out.println("<body>");
-
-            Toimenpide toimenpide = new Toimenpide(0, Kuvaus, pvm, Tietovarasto.getKayttajaID(), Integer.parseInt(aloiteID), vaihe);
+            
+            int kayttajaID = (int) session.getAttribute("kayttajaID");
+            
+            Toimenpide toimenpide = new Toimenpide(0, Kuvaus, pvm, kayttajaID , Integer.parseInt(aloiteID), vaihe);
 
             if (tietovarasto.lisaaToimenpide(toimenpide)) {
                 out.println("<h1>Toimenpiteen lisääminen onnistui</h1>");
