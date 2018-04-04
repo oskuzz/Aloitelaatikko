@@ -58,18 +58,27 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <link href=\"../CSS/signin.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
       out.write("        <link href=\"../CSS/style3.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
       out.write("\r\n");
+      out.write("        <style>\r\n");
+      out.write("            footer{\r\n");
+      out.write("                font-family: Brush Script MT;\r\n");
+      out.write("                color: white;\r\n");
+      out.write("                font-size: 30px;\r\n");
+      out.write("            }\r\n");
+      out.write("        </style>\r\n");
+      out.write("\r\n");
       out.write("        <title>Aloitelaatikko</title>\r\n");
       out.write("        <link rel=\"shortcut icon\" href=\"favicon.ico\" type=\"image/x-icon\">\r\n");
       out.write("    </head>\r\n");
       out.write("    <body class=\"indexBody\">\r\n");
       out.write("        <nav class=\"navbar navbar-expand-sm navbar-dark\">\r\n");
       out.write("            <!-- Brand/logo -->\r\n");
-      out.write("            <a href=\"index.jsp\" class=\"navbar-brand\"><img src=\"pahvilaatikko2.png\"></a>\r\n");
-      out.write("            <a class=\"navbar-brand\" href=\"index.jsp\">Aloitelaatikko</a>\r\n");
+      out.write("            <a href=\"etusivuKayttaja.jsp\" class=\"navbar-brand\"><img src=\"/Aloitelaatikko_ver2/jspSivut/pahvilaatikko2.png\"></a>\r\n");
+      out.write("            <a class=\"navbar-brand\" href=\"etusivuKayttaja.jsp\"><img src=\"/Aloitelaatikko_ver2/jspSivut/Aloitelaatikko_teksti.png\"></a>\r\n");
+      out.write("            <a href=\"etusivuKayttaja.jsp\" class=\"navbar-brand\"><img src=\"/Aloitelaatikko_ver2/jspSivut/pahvilaatikko2.png\"></a><br>\r\n");
+      out.write("            <img src=\"/Aloitelaatikko_ver2/jspSivut/Kirjautuminen.png\">\r\n");
       out.write("        </nav>\r\n");
       out.write("\r\n");
       out.write("        <div class=\"indexDiv form-group\">\r\n");
-      out.write("            <h1>Kirjautuminen</h1>\r\n");
       out.write("            <form class=\"form-signin\" name=\"lisays\" action=\"../../Aloitelaatikko_ver2/index\" method=\"post\">\r\n");
       out.write("                ");
 
@@ -89,13 +98,12 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
                 
       out.write("\r\n");
       out.write("                <input type=\"text\" class=\"form-control\" name=\"username\" placeholder=\"Käyttäjätunnus\">\r\n");
-      out.write("                <input type=\"password\" class=\"form-control\" name=\"salasana\" placeholder=\"Salasana\"><br>\r\n");
-      out.write("\r\n");
+      out.write("                <input type=\"password\" class=\"form-control\" name=\"salasana\" placeholder=\"Salasana\">\r\n");
       out.write("                <input type=\"submit\" class=\"btn btn-primary\" value=\"Kirjaudu\" name=\"submit\">\r\n");
       out.write("            </form>\r\n");
       out.write("        </div>\r\n");
       out.write("        <footer class=\"container-fluid footer text-center fixed-bottom\">\r\n");
-      out.write("            <p>Aloitelaatikko Made By Julius Kinnarinen (&copy;)</p>\r\n");
+      out.write("            <img class=\"copyright\" src=\"/Aloitelaatikko_ver2/jspSivut/Copyright.png\">\r\n");
       out.write("        </footer>\r\n");
       out.write("    </body>\r\n");
       out.write("</html>\r\n");
