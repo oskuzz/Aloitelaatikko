@@ -13,14 +13,16 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+        <link href="/Aloitelaatikko_ver2/CSS/style.css" rel="stylesheet" type="text/css"/>
         <style>
             body {
-                background-color: #14cad4;
+                background-image: url("/Aloitelaatikko_ver2/jspSivut/oceanBackground.jpg");
+                background-size: cover;
                 color: black;
             }
 
             table {
-                background-color: white !important;
+                background: rgba(255, 255, 255, 0.7) !important;
                 border: 1px;
             }
         </style>
@@ -37,10 +39,12 @@
             String aloiteNimi = aloite.getAloitenimi();
             String aloiteKuvaus = aloite.getAloitekuvaus();
             String pvm = aloite.getPvm();
+            
         %>
 
         <div class="container">
-            <h1>Poista aloite</h1>
+            <img class="header" src="/Aloitelaatikko_ver2/jspSivut/PoistaAloite.png">
+            <a class="return" href="tulostaAloitteetKayttaja.jsp"><img src="/Aloitelaatikko_ver2/jspSivut/Palaa.png"></a>
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead class="thead-dark">
@@ -60,8 +64,8 @@
                         </tr>
                     </tbody>
                 </table>
-                <form name="lisays" action="/Aloitelaatikko_ver2/poistaAloite" method="post">
-                    <input type="submit" class="btn btn-danger" name="submit" value="Poista">
+                <form class="form-signin" name="lisays" action="/Aloitelaatikko_ver2/poistaAloite" method="post">
+                    <input class="btn btn-danger" type="submit" class="btn btn-danger" name="submit" value="Poista">
                     <input type="hidden" name="aloiteID" value='<%=aloiteID%>'>
                 </form>
             </div>

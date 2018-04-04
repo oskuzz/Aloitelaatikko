@@ -45,7 +45,7 @@
                 <form class="form-signin" name="lisays" action="/Aloitelaatikko_ver2/lisaaAloite" method="post">
                     <input class="form-control" type="text" name="aloitenimi" placeholder="Otsikko"><br>
                     <textarea class="form-control" rows="10" cols="40" name="aloitekuvaus" placeholder="Kuvaus"></textarea><br>
-                    <input class="btn btn-primary" type="reset" value="Tyhjennä" name="reset"/>
+                    <input class="btn btn-danger" type="reset" value="Tyhjennä" name="reset"/>
                     <input class="btn btn-primary"type="submit" value="Talleta" name="talleta"/>
                 </form>
             </div>

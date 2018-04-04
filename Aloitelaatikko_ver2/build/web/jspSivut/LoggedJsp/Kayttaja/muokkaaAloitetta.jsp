@@ -16,13 +16,22 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
         <style>
             body {
-                background-color: #14cad4;
+                background-image: url("/Aloitelaatikko_ver2/jspSivut/oceanBackground.jpg");
+                background-size: cover;
                 color: black;
+                text-align: center;
+                padding: 70px;
             }
-
-            table {
-                background-color: white !important;
-                border: 1px;
+            div {
+                max-width: 330px;
+                padding: 15px;
+                margin: 0 auto;
+            }
+            input{
+                margin-bottom: 20px;
+            }
+            .btn{
+                margin-bottom: 5px;
             }
         </style>
         <title>Muokkaa aloitetta</title>
@@ -38,17 +47,20 @@
             String aloiteKuvaus = request.getParameter("aloitekuvaus");
         %>
         <div class="container">
-            <h1>Muokkaa aloitetta</h1>
-            <form name="muokkaa" action="/Aloitelaatikko_ver2/muokkaaAloitetta" method="post">
-                <input type="text" class="" name="aloitenimi" value="<%=aloiteNimi%>"><br>
-                <textarea rows="10" cols="40" name="aloitekuvaus"><%=aloiteKuvaus%></textarea><br>
-                <input type="submit" class="btn btn-danger" name="submit" value="Muokkaa">
-                <input type="hidden" name="aloiteID" value='<%=aloiteID%>'>
-            </form>
-            <form name="poista" action='../Kayttaja/poistaAloite.jsp' method="post">
-                <input type="hidden" name="aloiteID" value='<%=aloiteID%>'>
-                <input class="btn btn-danger" type="submit" name="poista" value="Poista">
-            </form>
+            <img class="header" src="/Aloitelaatikko_ver2/jspSivut/PoistaAloite.png"><br>
+            <a class="return" href="tulostaAloitteetKayttaja.jsp"><img src="/Aloitelaatikko_ver2/jspSivut/Palaa.png"></a>
+            <div class="form-group">    
+                <form class="form-signin" name="muokkaa" action="/Aloitelaatikko_ver2/muokkaaAloitetta" method="post">
+                    <input class="form-control" type="text" class="" name="aloitenimi" value="<%=aloiteNimi%>">
+                    <textarea class="form-control" rows="10" cols="40" name="aloitekuvaus"><%=aloiteKuvaus%></textarea><br>
+                    <input class="btn btn-primary" type="submit" class="btn btn-danger" name="submit" value="Muokkaa">
+                    <input type="hidden" name="aloiteID" value='<%=aloiteID%>'>
+                </form>
+                <form name="poista" action='../Kayttaja/poistaAloite.jsp' method="post">
+                    <input class="btn btn-danger" type="hidden" name="aloiteID" value='<%=aloiteID%>'>
+                    <input class="btn btn-danger" type="submit" name="poista" value="Poista">
+                </form>
+            </div>
         </div>
     </body>
 </html>

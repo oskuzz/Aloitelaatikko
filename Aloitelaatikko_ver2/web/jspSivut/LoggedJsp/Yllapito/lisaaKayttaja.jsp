@@ -15,7 +15,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
         <style>
             body {
-                background-image: url("spagettikissa.jpg");
+                background-image: url("/Aloitelaatikko_ver2/jspSivut/oceanBackground.jpg");
                 background-size: cover;
                 color: black;
                 text-align: center;
@@ -33,9 +33,10 @@
     </head>
     <body>
         <div class="container">
+            <img class="header" src="/Aloitelaatikko_ver2/jspSivut/LisaaKayttaja.png"><br>
+            <a class="return" href="etusivuYllapito.jsp"><img src="/Aloitelaatikko_ver2/jspSivut/Palaa.png"></a>
             <div class="form-group">
-                <h1>Uuden käyttäjän lisäys</h1>
-                <form class="form-signin" name="lisays" action="../../Aloitelaatikko_ver2/lisaaKayttaja" method="post">
+                <form class="form-signin" name="lisays" action="../../../lisaaKayttaja" method="post">
                     <input type="text" class="form-control" name="etunimi" placeholder="Etunimi"><br>
                     <input type="text" class="form-control" name="sukunimi" placeholder="Sukunimi"><br>
                     <input type="email" class="form-control" name="email" placeholder="Email"><br>
@@ -49,7 +50,7 @@
                     </select><br>
 
                     <input type="submit" class="btn btn-primary" value="Talleta" name="talleta"/>
-                    <input type="reset" class="btn btn-primary" value="Tyhjennä" name="reset"/>
+                    <input type="reset" class="btn btn-danger" value="Tyhjennä" name="reset"/>
                 </form>
             </div>
         </div>

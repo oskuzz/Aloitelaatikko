@@ -53,8 +53,12 @@
             <img src="/Aloitelaatikko_ver2/jspSivut/Yllapito.png">
         </nav>
         <br>
-        <form class="formStyle" name="lisays" action="tulostaKayttajat.jsp" method="post">
+        <form class="formStyle" name="kayttajat" action="tulostaKayttajat.jsp" method="post">
             <input type="submit" class="btn btn-primary btnSize" value="Käyttäjätiedot" name="submit">
+        </form>
+        
+        <form class="formStyle" name="lisaaKayttaja" action="lisaaKayttaja.jsp" method="post">
+            <input type="submit" class="btn btn-primary btnSize" value="Lisää käyttäjä" name="submit">
         </form>
         <br>
         <form class="formStyle" name="lisaaAloite" action="../Kayttaja/lisaaAloite.jsp">
@@ -69,7 +73,7 @@
             <input type="submit" class="btn btn-primary btnSize" value="Kaikki aloitteet / Toimenpiteet" name="tulostaKaikkiAloitteet">
         </form>
         <br>
-        <form class="formStyle" name="kirjauduUlos" action="/Aloitelaatikko_ver2/jspSivut/index.jsp">
+        <form class="formStyle" name="kirjauduUlos" action="../../../logout">
             <input type="submit" class="btn btn-primary btnSize" value="Kirjaudu ulos" name="kirjauduUlos">
         </form>
         <footer class="container-fluid footer text-center fixed-bottom">
