@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -27,7 +28,7 @@
 
             .btnSize {
                 width: 300px;
-                height: 60px;
+                height: 50px;
             }
 
             .formStyle {
@@ -52,15 +53,14 @@
             <a href="etusivuYllapito.jsp" class="navbar-brand"><img src="/Aloitelaatikko_ver2/jspSivut/pahvilaatikko2.png"></a><br>
             <img src="/Aloitelaatikko_ver2/jspSivut/Yllapito.png">
         </nav>
-        <br>
         <form class="formStyle" name="kayttajat" action="tulostaKayttajat.jsp" method="post">
             <input type="submit" class="btn btn-primary btnSize" value="Käyttäjätiedot" name="submit">
         </form>
-        
+
         <form class="formStyle" name="lisaaKayttaja" action="lisaaKayttaja.jsp" method="post">
             <input type="submit" class="btn btn-primary btnSize" value="Lisää käyttäjä" name="submit">
         </form>
-        <br>
+        
         <form class="formStyle" name="lisaaAloite" action="../Kayttaja/lisaaAloite.jsp">
             <input type="submit" class="btn btn-primary btnSize" value="Lisää aloite" name="submit">
         </form>
