@@ -35,7 +35,7 @@ public class logout extends HttpServlet {
         HttpSession session = request.getSession();
         session.invalidate();
         response.sendRedirect("jspSivut/index.jsp");
-        
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
