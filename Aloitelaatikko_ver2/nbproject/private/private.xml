@@ -2,6 +2,19 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/osku0/Desktop/Aloitelaatikko/Aloitelaatikko_ver2/web/jspSivut/LoggedJsp/Ohjausryhma/etusivuOhjausryhma.jsp</file>
+            <file>file:/C:/Users/osku0/Desktop/Aloitelaatikko/Aloitelaatikko_ver2/web/jspSivut/LoggedJsp/Kayttaja/poistaAloite.jsp</file>
+            <file>file:/C:/Users/osku0/Desktop/Aloitelaatikko/Aloitelaatikko_ver2/web/jspSivut/LoggedJsp/Kayttaja/etusivuKayttaja.jsp</file>
+            <file>file:/C:/Users/osku0/Desktop/Aloitelaatikko/Aloitelaatikko_ver2/web/jspSivut/LoggedJsp/Yllapito/lisaaKayttaja.jsp</file>
+            <file>file:/C:/Users/osku0/Desktop/Aloitelaatikko/Aloitelaatikko_ver2/web/jspSivut/LoggedJsp/Kayttaja/lisaaAloite.jsp</file>
+            <file>file:/C:/Users/osku0/Desktop/Aloitelaatikko/Aloitelaatikko_ver2/src/java/Servletit/lisaaKayttaja.java</file>
+            <file>file:/C:/Users/osku0/Desktop/Aloitelaatikko/Aloitelaatikko_ver2/src/java/Servletit/lisaaAloite.java</file>
+            <file>file:/C:/Users/osku0/Desktop/Aloitelaatikko/Aloitelaatikko_ver2/src/java/Servletit/lisaaToimenpide.java</file>
+            <file>file:/C:/Users/osku0/Desktop/Aloitelaatikko/Aloitelaatikko_ver2/web/jspSivut/LoggedJsp/Yllapito/etusivuYllapito.jsp</file>
+            <file>file:/C:/Users/osku0/Desktop/Aloitelaatikko/Aloitelaatikko_ver2/src/java/Servletit/index.java</file>
+            <file>file:/C:/Users/osku0/Desktop/Aloitelaatikko/Aloitelaatikko_ver2/web/jspSivut/LoggedJsp/Yllapito/muokkaaKayttaja.jsp</file>
+            <file>file:/C:/Users/osku0/Desktop/Aloitelaatikko/Aloitelaatikko_ver2/web/jspSivut/LoggedJsp/Kayttaja/tulostaAloitteetKayttaja.jsp</file>
+        </group>
     </open-files>
 </project-private>

@@ -61,19 +61,26 @@ public class lisaaKayttaja extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Käyttäjän lisäys</title>");
+            out.println("<meta http-equiv= \"refresh\" content=\"5; url= jspSivut/LoggedJsp/Yllapito/tulostaKayttajat.jsp\" />");
+            out.println("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css\">");
+            out.println("<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>");
+            out.println("<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js\"></script>");
+            out.println("<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js\"></script>");
+            out.println("<style>\n"
+                    + "            body {\n"
+                    + "                background-image: url(\"jspSivut/spagettikissa.jpg\");\n"
+                    + "                background-size: cover;\n"
+                    + "                color: black;\n"
+                    + "                text-align: center;\n"
+                    + "                padding: 70px;\n"
+                    + "            }\n"
+                    + "        </style>");
+            out.println("");
+            out.println("");
+            out.println("");
+            out.println("<title>Käyttäjän lisääminen</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Käyttäjän tiedot</h1>");
-            
-            out.println("Etunimi: " + etunimi + "<br>");
-            out.println("Sukunimi: " + sukunimi + "<br>");
-            out.println("Email: " + email + "<br>");
-            out.println("Käyttäjätunnus: " + kayttajatunnus + "<br>");
-            out.println("Salasana: " + salasana + "<br>");
-            out.println("Puhelin: " + puhelin + "<br>");
-            out.println("Luontipäiväys: " + luontipaivays + "<br>");
-            out.println("Ryhmä: " + ryhma + "<br>");
             
             // Luodaan käyttäjä-olio lomakkeelta saatujen tietojen avulla
            
@@ -83,10 +90,11 @@ public class lisaaKayttaja extends HttpServlet {
             
             if (tietovarasto.lisaaKayttaja(kayttaja)) {
                 //Lisäys onnistui
-                out.println("<h2>Lisäys onnistui</h2>");
+                out.println("<h1>Lisäys onnistui</h1>");
+                out.println("<h2>Sivu uudelleenohjataan 5 sekunnin kuluttua</h2>");
             } else {
                 //Lisäys epäonnistui
-                out.println("<h2>Lisäys epäonnistui</h2>");
+                out.println("<h1>Lisäys epäonnistui</h1>");
             }
             
             out.println("</body>");
