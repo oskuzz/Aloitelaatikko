@@ -33,9 +33,8 @@
     <body class="indexBody">
         <nav class="navbar navbar-expand-sm navbar-dark">
             <!-- Brand/logo -->
-            <a href="etusivuKayttaja.jsp" class="navbar-brand"><img src="/Aloitelaatikko_ver2/jspSivut/pahvilaatikko2.png"></a>
-            <a class="navbar-brand" href="etusivuKayttaja.jsp"><img src="/Aloitelaatikko_ver2/jspSivut/Aloitelaatikko_teksti.png"></a>
-            <a href="etusivuKayttaja.jsp" class="navbar-brand"><img src="/Aloitelaatikko_ver2/jspSivut/pahvilaatikko2.png"></a><br>
+            <img src="/Aloitelaatikko_ver2/jspSivut/Aloitelaatikko_teksti.png">
+            <br>
             <img src="/Aloitelaatikko_ver2/jspSivut/Kirjautuminen.png">
         </nav>
 

@@ -88,6 +88,9 @@
         <div class="container">
             <img class="header" src="/Aloitelaatikko_ver2/jspSivut/KaikkiAloitteet.png">
             <a class="return" href=<%=url%>><img src="/Aloitelaatikko_ver2/jspSivut/Palaa.png"></a>
+            <form style="display: inline-block; margin-top: 10px;" class="formStyle" name="lisays" action="haeAloitteet.jsp">
+                <input type="submit" class="btn btn-primary" value="Hae" name="Hae">
+            </form>
             <div class="table-responsive">
                 <table class="table table-striped" border="1">
                     <thead class="thead-dark">

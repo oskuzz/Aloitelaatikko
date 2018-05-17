@@ -457,38 +457,36 @@ public class Tietovarasto {
         }
     }
 
-    public Aloite haeAloite(int aloiteID) {
+     public List<Aloite> haeAloite(String aloitenimi) {
+        List<Aloite> aloitteet = new ArrayList<Aloite>();
+
         Connection yhteys = null;
         PreparedStatement hakulause = null;
         ResultSet tulosjoukko = null;
 
-        Aloite aloite = null;
-
         try {
-            yhteys = YhteydenHallinta.avaaYhteys(ajuri, url, kayttajatunnus, salasana);
-            if (yhteys == null) {
-                return null;
+            yhteys = YhteydenHallinta.avaaYhteys(ajuri, url, this.kayttajatunnus, salasana);
+            if (yhteys != null) {
+                String haeKaikkiSQL = "select * from aloite where aloitenimi=?";
+
+                hakulause = yhteys.prepareStatement(haeKaikkiSQL);
+                hakulause.setString(1, aloitenimi);
+                tulosjoukko = hakulause.executeQuery();
+
+                while (tulosjoukko.next()) {
+                    Aloite aloite = new Aloite(tulosjoukko.getInt(1), tulosjoukko.getString(2), tulosjoukko.getString(3), tulosjoukko.getString(4), tulosjoukko.getInt(5));
+                    aloitteet.add(aloite);
+                }
             }
+        } catch (Exception ex) {
 
-            String haeKaikkiSQL = "select * from aloite where aloiteID=?";
-
-            hakulause = yhteys.prepareStatement(haeKaikkiSQL);
-            hakulause.setInt(1, aloiteID);
-            tulosjoukko = hakulause.executeQuery();
-
-            while (tulosjoukko.next()) {
-                aloite = new Aloite(tulosjoukko.getInt(1), tulosjoukko.getString(2), tulosjoukko.getString(3), tulosjoukko.getString(4), tulosjoukko.getInt(5));
-            }
-
-        } catch (SQLException ex) {
-            // Jos tuli virhe, niin hypätään tänne
-            ex.printStackTrace();
-            return null;
         } finally {
-            // Suljetaan yhteysx tietokantaa
+
+            YhteydenHallinta.suljeTulosjoukko(tulosjoukko);
             YhteydenHallinta.suljeLause(hakulause);
             YhteydenHallinta.suljeYhteys(yhteys);
+
         }
-        return aloite;
+        return aloitteet;
     }
 }
